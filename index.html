@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Google 1998! – AI Lab: Keyword Frequency vs. PageRank Algorithm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Top Search & Branding Section -->
+    <header class="header-section">
+      <!-- Classic 1998 Multicolored Google Logo -->
+      <h1 class="logo" aria-label="Mini Google 1998!">
+        <span class="letter-blue">M</span><span class="letter-red">i</span><span class="letter-yellow">n</span><span class="letter-blue">i</span>
+        <span class="logo-space"> </span>
+        <span class="letter-blue">G</span><span class="letter-red">o</span><span class="letter-yellow">o</span><span class="letter-blue">g</span><span class="letter-green">l</span><span class="letter-red">e</span>
+        <span class="logo-space"> </span>
+        <span class="letter-blue">1</span><span class="letter-red">9</span><span class="letter-yellow">9</span><span class="letter-green">8</span><span class="letter-green">!</span>
+      </h1>
+
+      <p class="subtitle">AI Lab: Keyword Frequency vs. PageRank Algorithm</p>
+
+      <!-- Search Input Area -->
+      <form id="searchForm" class="search-form" onsubmit="return false;">
+        <div class="search-bar-container">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search keywords (e.g. pizza, pune, food)..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button type="submit" id="searchBtn" class="search-btn">Search</button>
+        </div>
+      </form>
+
+      <!-- Clickable Suggested Searches -->
+      <div class="suggested-searches">
+        <span class="suggested-label">Suggested searches:</span>
+        <a href="#pizza" class="suggest-link" data-keyword="pizza">pizza</a>
+        <span class="suggest-divider">·</span>
+        <a href="#pune" class="suggest-link" data-keyword="pune">pune</a>
+        <span class="suggest-divider">·</span>
+        <a href="#food" class="suggest-link" data-keyword="food">food</a>
+        <span class="suggest-divider">·</span>
+        <a href="#canteen" class="suggest-link" data-keyword="canteen">canteen</a>
+      </div>
+    </header>
+
+    <!-- Main Comparison Section: Two Columns -->
+    <main class="columns-grid">
+      <!-- LEFT COLUMN: Old Way (Keyword Frequency) -->
+      <section class="column column-left" aria-label="Left Column: Old Way">
+        <div class="column-header">
+          <h2 class="column-heading">Left: Old Way</h2>
+          <p class="column-subtitle">Sorted by how many times the word appears in the page text</p>
+        </div>
+        <div id="leftResults" class="results-list">
+          <!-- Dynamically injected results -->
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: PageRank Way -->
+      <section class="column column-right" aria-label="Right Column: PageRank Way">
+        <div class="column-header">
+          <div class="column-header-row">
+            <h2 class="column-heading">Right: PageRank Way</h2>
+            <button type="button" id="recalculateBtn" class="recalculate-btn" title="Re-run 100,000 Surfer Simulation">↺ Re-simulate</button>
+          </div>
+          <p class="column-subtitle">Sorted by PageRank (from 100,000 random surfer moves)</p>
+        </div>
+        <div id="rightResults" class="results-list">
+          <!-- Dynamically injected results -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <p class="footer-note">
+        Mini Google 1998! · Educational AI Lab demonstrating keyword spamming vs. link-based authority ranking.
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

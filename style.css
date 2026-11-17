@@ -1,0 +1,398 @@
+/* ==========================================================
+   Mini Google 1998! – Classic Search & Algorithm Comparison
+   CSS Stylesheet
+   ========================================================== */
+
+/* --- CSS Reset & Global Typography --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: 24px 16px 40px;
+}
+
+.page-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* --- Header & Search Section --- */
+.header-section {
+  text-align: center;
+  padding: 10px 0 28px;
+}
+
+/* Classic Google-inspired Multicolored Logo */
+.logo {
+  font-family: "Catull", "Times New Roman", "Baskerville", "Georgia", serif;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 6px;
+  user-select: none;
+  display: inline-block;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.logo-space {
+  display: inline-block;
+  width: 12px;
+}
+
+/* Google Classic 1998 Color Scheme */
+.letter-blue {
+  color: #245dc1; /* classic deep Google blue */
+}
+
+.letter-red {
+  color: #d93025; /* classic Google red */
+}
+
+.letter-yellow {
+  color: #f29900; /* classic warm Google yellow */
+}
+
+.letter-green {
+  color: #188038; /* classic Google green */
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 15px;
+  color: #555555;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+/* Search Form & Input */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 540px;
+}
+
+.search-input {
+  flex: 1;
+  height: 38px;
+  padding: 6px 14px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #111111;
+  background-color: #ffffff;
+  border: 1px solid #7f9db9; /* classic subtle border */
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #245dc1;
+  box-shadow: 0 0 0 2px rgba(36, 93, 193, 0.2);
+}
+
+.search-btn {
+  height: 38px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #222222;
+  background-color: #ece9d8;
+  background: linear-gradient(180deg, #f7f7f7 0%, #ece9d8 100%);
+  border: 1px solid #707070;
+  border-radius: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.search-btn:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #e2ded0 100%);
+  border-color: #444444;
+}
+
+.search-btn:active {
+  background: #dbd7c5;
+}
+
+/* Suggested Searches */
+.suggested-searches {
+  font-size: 14px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.suggested-label {
+  font-weight: 500;
+  color: #444444;
+}
+
+.suggest-link {
+  color: #1a0dab;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 400;
+  transition: color 0.15s;
+}
+
+.suggest-link:hover {
+  color: #d93025;
+}
+
+.suggest-divider {
+  color: #888888;
+  user-select: none;
+}
+
+/* --- Main Comparison Section: Two Columns --- */
+.columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+/* Column Container */
+.column {
+  background-color: #fafafa;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.column-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.column-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.column-subtitle {
+  font-size: 13px;
+  color: #5f6368;
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* Re-simulate Button for PageRank */
+.recalculate-btn {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: inherit;
+  color: #444444;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.recalculate-btn:hover {
+  background: #f0f0f0;
+  border-color: #999999;
+  color: #111111;
+}
+
+/* --- Results List & Cards --- */
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* Individual Result Card */
+.result-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.result-card:hover {
+  border-color: #bcbcbc;
+}
+
+/* Card Header: Website URL & Rank # */
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.website-url {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a0dab;
+  text-decoration: underline;
+  word-break: break-all;
+  cursor: pointer;
+}
+
+.website-url:hover {
+  color: #15098f;
+}
+
+.rank-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5f6368;
+  white-space: nowrap;
+}
+
+/* Score Badges */
+.card-badge-row {
+  margin-bottom: 8px;
+}
+
+/* Left Column: Red/Pink Keyword Frequency Badge */
+.badge-frequency {
+  display: inline-block;
+  background-color: #fce8e6;
+  color: #c5221f;
+  border: 1px solid #fad2cf;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.2px;
+}
+
+/* Right Column: Green PageRank Badge */
+.badge-pagerank {
+  display: inline-block;
+  background-color: #e6f4ea;
+  color: #137333;
+  border: 1px solid #ceead6;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.2px;
+}
+
+/* Card Description & Highlight */
+.card-description {
+  font-size: 14px;
+  color: #3c4043;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Highlighted Keyword Matches */
+mark.highlight {
+  background-color: #fff176;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* --- Empty / Prompt / Message States --- */
+.status-state {
+  text-align: center;
+  padding: 40px 16px;
+  color: #70757a;
+}
+
+.status-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.status-message {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.status-message strong {
+  color: #202124;
+}
+
+.status-no-results {
+  color: #c5221f;
+  font-weight: 500;
+}
+
+/* --- Footer --- */
+.footer-section {
+  text-align: center;
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid #ececec;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: #70757a;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .columns-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .search-bar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+}
